@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export TERM="xterm-256color"
 
-POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+SPACESHIP_CHAR_SYMBOL="→ "
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/antigen.zsh
@@ -13,7 +13,9 @@ antigen bundle sudo
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
-antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 antigen apply
 
 [ -f .aliases ] && source .aliases
+
+alias lc='colorls -a --sd'
