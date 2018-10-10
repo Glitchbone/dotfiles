@@ -13,6 +13,7 @@ antigen bundle sudo
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
+antigen bundle thewtex/tmux-mem-cpu-load
 antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 antigen apply
 
