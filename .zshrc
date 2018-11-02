@@ -20,3 +20,4 @@ antigen apply
 [ -f .aliases ] && source .aliases
 
 alias lc='colorls -a --sd'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
