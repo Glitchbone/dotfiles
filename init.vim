@@ -12,14 +12,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
+Plug 'StanAngeloff/php.vim', {'for': 'php'}
+Plug 'neomake/neomake'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-php-manual'
 Plug 'ryanoasis/vim-devicons'
-Plug 'miyakogi/sidepanel.vim'
 call plug#end()
 
 set termguicolors
-set number
 set cursorline
 set list
 set background=dark
@@ -29,10 +29,16 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set completeopt=noinsert,menuone,noselect
+set hidden
+set number relativenumber
+set mouse=a
 syntax enable
 colorscheme OceanicNext
+highlight LineNr guibg=#343d46
+highlight CursorLineNr guifg=white
 
-let g:AutoPairsFlyMode = 1
+let mapleader = ","
+let g:AutoPairsFlyMode = 0
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
@@ -47,14 +53,19 @@ let g:vimfiler_tree_opened_icon = '▼'
 let g:vimfiler_tree_closed_icon = '▷'
 let g:vimfiler_tree_leaf_icon = ''
 
-let g:sidepanel_pos = "left"
-let g:sidepanel_width = 26
-let g:sidepanel_config = {}
-let g:sidepanel_config['vimfiler'] = {}
-
 inoremap jj <esc>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd BufEnter * call ncm2#enable_for_buffer()
 nnoremap <C-p> :FZF<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-b> :bprevious<CR>
+nnoremap <Leader>c :bd<CR>
+nnoremap <Leader>f :VimFilerExplorer -toggle<CR>
+
+call neomake#configure#automake('nrwi', 500)
+let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
+let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
+let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
