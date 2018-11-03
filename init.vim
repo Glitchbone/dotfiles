@@ -1,8 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'ncm2/ncm2'
+Plug 'phpactor/ncm2-phpactor'
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+Plug 'roxma/nvim-yarp'
 Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -26,6 +28,7 @@ set softtabstop=4
 set shiftwidth=4 
 set expandtab
 set autoindent
+set completeopt=noinsert,menuone,noselect
 syntax enable
 colorscheme OceanicNext
 
@@ -44,10 +47,6 @@ let g:vimfiler_tree_opened_icon = '▼'
 let g:vimfiler_tree_closed_icon = '▷'
 let g:vimfiler_tree_leaf_icon = ''
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
-
 let g:sidepanel_pos = "left"
 let g:sidepanel_width = 26
 let g:sidepanel_config = {}
@@ -57,5 +56,5 @@ inoremap jj <esc>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
+autocmd BufEnter * call ncm2#enable_for_buffer()
 nnoremap <C-p> :FZF<CR>
