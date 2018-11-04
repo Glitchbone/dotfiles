@@ -1,6 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimfiler.vim'
 Plug 'ncm2/ncm2'
 Plug 'phpactor/ncm2-phpactor'
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
@@ -20,6 +19,8 @@ Plug 'alvan/vim-php-manual'
 Plug 'ryanoasis/vim-devicons'
 Plug 'diepm/vim-rest-console'
 Plug 'airblade/vim-gitgutter'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 set termguicolors
@@ -59,10 +60,7 @@ let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_theme='oceanicnext'
 let g:airline_powerline_fonts = 1
 
-let g:vimfiler_as_default_explorer = 1
-let g:vimfiler_tree_opened_icon = '▼'
-let g:vimfiler_tree_closed_icon = '▷'
-let g:vimfiler_tree_leaf_icon = ''
+let g:ranger_replace_netrw = 1
 
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 243
