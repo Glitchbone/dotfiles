@@ -75,9 +75,8 @@ nnoremap <C-p> :FZF<CR>
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-b> :bprevious<CR>
 nnoremap <Leader>c :bd<CR>
-nnoremap <Leader>f :VimFilerExplorer -toggle<CR>
 
-call neomake#configure#automake('nrwi', 500)
+call neomake#configure#automake('nrw', 750)
 let g:neomake_error_sign = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
 let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
