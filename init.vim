@@ -62,6 +62,10 @@ let g:vimfiler_tree_opened_icon = '▼'
 let g:vimfiler_tree_closed_icon = '▷'
 let g:vimfiler_tree_leaf_icon = ''
 
+let g:indentLine_char = '│'
+let g:indentLine_color_term = 243
+let g:indentLine_color_gui = '#65737e'
+
 inoremap jj <esc>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
