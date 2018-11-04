@@ -5,6 +5,7 @@ Plug 'ncm2/ncm2'
 Plug 'phpactor/ncm2-phpactor'
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'roxma/nvim-yarp'
+Plug 'Yggdroot/indentLine'
 Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -21,17 +22,25 @@ call plug#end()
 
 set termguicolors
 set cursorline
+set listchars=eol:¬,tab:>·,trail:~
 set list
 set background=dark
 set tabstop=4
 set softtabstop=4 
 set shiftwidth=4 
+set smarttab
+set ai
+set si
+set wrap
 set expandtab
-set autoindent
 set completeopt=noinsert,menuone,noselect
 set hidden
 set number relativenumber
 set mouse=a
+set nobackup
+set nowb
+set noswapfile
+
 syntax enable
 colorscheme OceanicNext
 highlight LineNr guibg=#343d46
