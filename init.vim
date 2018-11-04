@@ -65,7 +65,7 @@ let g:ranger_replace_netrw = 1
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 243
 let g:indentLine_color_gui = '#65737e'
-let g:indentLine_bufTypeExclude = ['help', 'terminal']
+let g:indentLine_bufTypeExclude = ['help', 'term:.*']
 
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
