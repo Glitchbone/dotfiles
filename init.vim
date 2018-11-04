@@ -19,6 +19,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-php-manual'
 Plug 'ryanoasis/vim-devicons'
 Plug 'diepm/vim-rest-console'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 set termguicolors
@@ -79,7 +80,8 @@ nnoremap <Leader>c :bd<CR>
 nnoremap <Leader>f :VimFilerExplorer -toggle<CR>
 
 call neomake#configure#automake('nrwi', 500)
-let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
+let g:neomake_error_sign = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
 let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
 let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
-let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
+let g:neomake_info_sign = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
+let g:neomake_open_list = 1
