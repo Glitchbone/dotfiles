@@ -18,6 +18,7 @@ Plug 'neomake/neomake'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-php-manual'
 Plug 'ryanoasis/vim-devicons'
+Plug 'diepm/vim-rest-console'
 call plug#end()
 
 set termguicolors
