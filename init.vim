@@ -5,7 +5,7 @@ Plug 'phpactor/ncm2-phpactor'
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 Plug 'roxma/nvim-yarp'
 Plug 'Yggdroot/indentLine'
-Plug 'mhartington/oceanic-next'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -21,10 +21,12 @@ Plug 'diepm/vim-rest-console'
 Plug 'airblade/vim-gitgutter'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'matze/vim-move'
+Plug 'MrAlejandro/vim-phpdoc'
 call plug#end()
 
 set termguicolors
-set cursorline
+"set cursorline
 set listchars=eol:¬,tab:>·,trail:~
 set list
 set background=dark
@@ -45,9 +47,7 @@ set nowb
 set noswapfile
 
 syntax enable
-colorscheme OceanicNext
-highlight LineNr guibg=#343d46
-highlight CursorLineNr guifg=white
+colorscheme onedark
 
 let mapleader = ","
 let g:AutoPairsFlyMode = 0
@@ -57,7 +57,7 @@ let g:oceanic_next_terminal_italic = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 0
-let g:airline_theme='oceanicnext'
+let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 
 let g:ranger_replace_netrw = 1
@@ -76,6 +76,7 @@ nnoremap <C-p> :FZF<CR>
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-b> :bprevious<CR>
 nnoremap <Leader>c :bd<CR>
+nmap <Leader>d :call PhpDocPasteComment()<CR>
 
 call neomake#configure#automake('nrw', 750)
 let g:neomake_error_sign = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
